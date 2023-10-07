@@ -1,11 +1,16 @@
 // Import required modules
 const express = require('express');
+const cors = require("cors")
 const embedRoutes = require("./src/routes/embed")
 
 // Create an Express app
 const app = express();
+app.use(cors())
 app.use(express.json())
 app.use("/embed", embedRoutes)
+
+
+const port = process.env.PORT || 8000
 
 // Sample data
 const items = [
@@ -36,7 +41,6 @@ app.post('/api/items', (req, res) => {
 
 
 // Start the server
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
