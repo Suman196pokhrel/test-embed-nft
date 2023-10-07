@@ -8,7 +8,7 @@ async function generateNFTCard(metadata) {
         "<div>" +
         `<p>${description}</p>` +
         "<img src=" + `"` + `${image}` + `"` + "width='500' height='600'> " +
-        "<div>"
+        "</div>"
     )
 }
 
